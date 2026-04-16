@@ -1,0 +1,107 @@
+import java.util.Scanner;
+public class primeirobloco {
+   public static void main(String[] args) {
+   //1 - inicio do programa
+
+
+
+
+       Scanner entrada = new Scanner(System.in);
+     
+       //mensagem e inicio do jogo
+       String nomejogador;
+     
+       System.out.println("Olá! Você está prestes a viver a vida mais divônica de todas!");
+       System.out.println("Para iniciarmos, digite como gostaria de ser chamado(a): ");
+       nomejogador = entrada.nextLine(); //pessoa digita e aperta enter
+
+
+       System.out.println("Qua nome incrível, " + nomejogador + "!");
+
+
+       //mensagem narrativa início
+       System.out.println("Neste cenário você é uma desenvolvedora de softwere");
+       System.out.println("Seu objetivo é manter sua felicidade e construir uma jornada de sucesso!");
+       entrada.nextLine();
+
+
+       //variáveis iniciais
+        int pontuacao = 150;
+        int felicidade = 80;
+        int dinheiro = 200;
+        int dia = 1;
+
+
+ 
+    System.out.println("STATUS INICIAL"); //mostrar status inicial
+    System.out.println("Pontuação: " + pontuacao);
+    System.out.println("Felicidade: " + felicidade);
+    System.out.println("Dinheiro: " + dinheiro);
+    System.out.println("Dia: " + dia);
+
+
+    System.out.println("Digite 1 para iniciar sua jornada.");
+    int iniciar = entrada.nextInt();
+
+
+    if (iniciar == 1){
+        System.out.println("Jornada iniciada! Boa sorte!");
+    } else {
+        System.out.println("Poxa, opção inválida! Comece novamente");
+    }
+
+
+// 2 - ciclo inicial - loop do jogo
+//loop Enquanto felicidade > 0, e dinheiro > 0, e dia ≤ 30
+        while (felicidade > 0 && dinheiro > 0 && dia <=30)  {
+            System.out.println("Escolha uma ação:");
+            System.out.println("1 - Trabalhar");
+            System.out.println("2 - Estudar");
+            System.out.println("3 - Relaxar");
+            System.out.println("4 - Sair Com os Amigos");
+            System.out.println("5 - Autocuidado");
+            System.out.println("6 - Cuidar do Pet");
+            System.out.println("7 - Desenvolver Projeto Pessoal");
+
+
+            int opcao = entrada.nextInt();
+            if (opcao == 1) {
+                System.out.println("Você passou o dia programando novas funcionalidades.");
+                System.out.print("Seu código foi elogiado pela equipe!");
+
+
+                pontuacao+=200;
+                dinheiro+=150;
+                felicidade-=10;
+
+
+                System.err.println("=200 pontos | +150 dinheiro | -10 felicidade");
+                //evento aleatório
+
+
+        System.out.println("BUG EM PRODUÇÃO!");
+        System.out.println("Você estava cansada hoje.");
+        System.out.println("Quer revisar o código antes de entregar?");
+        System.out.println("1 - Sim");
+        System.out.println("2 - Não");
+
+
+            int escolha = entrada.nextInt();
+
+
+            if (escolha == 1) {
+            System.out.println("Você revisou o código com atenção.");
+            System.out.println("Tudo certo! Nenhum bug passou ");
+            //não acontece nada
+            }
+            else if (escolha == 2 ){
+           
+            }
+               
+        }
+ 
+    }
+   }
+}
+
+
