@@ -1,0 +1,292 @@
+import java.util.Scanner;
+public class Magicdreamcode{
+   public static void main(String[] args) {
+
+
+       //primeiro bloco
+       Scanner entrada = new Scanner(System.in);
+       String nomejogador;
+
+
+       System.out.println("Olá! Você está prestes a viver a vida mais divônica de todas!"); //inicio do programa
+       System.out.println("Para iniciarmos, digite como gostaria de ser chamado(a): ");
+       nomejogador = entrada.nextLine(); //pessoa digita e aperta enter
+
+
+       System.out.println("Qua nome incrível, " + nomejogador + "!");
+       System.out.println("Neste cenário você é uma desenvolvedora de softwere"); //mensagem narrativa início
+       System.out.println("Seu objetivo é manter sua felicidade e construir uma jornada de sucesso!");
+       entrada.nextLine();
+       
+       System.out.println("Digite 1 para iniciar sua jornada.");
+       int iniciar = entrada.nextInt();
+
+
+       if (iniciar == 1) {
+           System.out.println("Jornada iniciada! Boa sorte!");
+       } else {
+           System.out.println("Poxa, opção inválida! Comece novamente");
+       }
+       
+       int pontuacao = 150; //variáveis iniciais
+       int felicidade = 80;
+       int dinheiro = 200;
+       int dia = 1;
+       
+       System.out.println("STATUS INICIAL"); //mostrar status inicial
+       System.out.println("Pontuação: " + pontuacao);
+       System.out.println("Felicidade: " + felicidade);
+       System.out.println("Dinheiro: " + dinheiro);
+       System.out.println("Dia: " + dia);
+
+
+
+
+       while (felicidade > 0 && dinheiro > 0 && dia <= 30) { //2-loop do jogo
+           System.out.println("Escolha uma ação:");
+           System.out.println("1 - Trabalhar");
+           System.out.println("2 - Estudar");
+           System.out.println("3 - Relaxar");
+           System.out.println("4 - Sair Com os Amigos");
+           System.out.println("5 - Autocuidado");
+           System.out.println("6 - Cuidar do Pet");
+           System.out.println("7 - Desenvolver Projeto Pessoal");
+           entrada.nextLine();
+
+
+           int opcao = entrada.nextInt();
+
+
+           //trabalhar 1
+           if (opcao == 1) {
+               System.out.println("Você passou o dia programando novas funcionalidades.");
+               System.out.print("Seu código foi elogiado pela equipe!");
+
+
+               pontuacao += 200;
+               dinheiro += 150;
+               felicidade -= 10;
+
+
+               System.out.println("=200 pontos | +150 dinheiro | -10 felicidade");
+               entrada.nextLine();
+               System.out.println("BUG EM PRODUÇÃO!"); //evento aleatório
+               System.out.println("Você estava cansada hoje.");
+               System.out.println("Quer revisar o código antes de entregar?");
+               System.out.println("1 - Sim");
+               System.out.println("2 - Não");
+
+
+               int escolha = entrada.nextInt();
+               if (escolha == 1) {
+                   System.out.println("Você revisou o código com atenção.");
+                   System.out.println("Tudo certo! Nenhum bug passou "); //não acontece nada
+                   entrada.nextLine();
+               }
+               else if (escolha == 2 ){
+                   System.out.println("Tudo certo! Nenhum bug passou "); //não acontece nada
+               }
+           }
+
+
+           //estudar 2
+           if (opcao == 2){
+            System.out.println("Você decidiu estudar novas tecnologias.");
+            System.out.println("Muito bem! Conseguiu aprender conceitos importantes da programação");
+            System.out.println("+165 pontos  |  -5 felicidade");
+            entrada.nextLine();
+
+
+            pontuacao +=165;
+            felicidade -=5;
+
+
+            System.out.println("Descobriu uma nova linguagem?"); //evento aleatorio
+            System.out.println("1 - Sim");
+            System.out.println("2 - Não");
+
+
+            int escolha = entrada.nextInt();
+            if (escolha == 1) {
+                System.out.println("Incrível! Continue assim.");
+                System.out.println("+100 pontos");
+                entrada.nextLine();
+                pontuacao +=100;
+            }
+            else if (escolha == 2){
+                System.out.println("Vamo tá melhorano esse estudo aí"); //não acontece nada
+                entrada.nextLine();
+            }
+           }
+
+
+           //relaxar 3
+           if (opcao == 3){
+            System.out.println("Você relaxou na dreamhouse,");
+            System.out.println("ouvindo música e descansando");
+            System.out.println("+20 felicidade  |  -50 dinheiro");
+            entrada.nextLine();
+
+
+            felicidade +=20;
+            dinheiro -=50;
+           }
+
+
+           //sair com os amigos 4
+           if (opcao == 4){
+            System.out.println("Você saiu com os seus amigos para conversar e se divertir.");
+            System.out.println("+15 felicidade  |  -120 dinheiro");
+            entrada.nextLine();
+
+
+            felicidade +=15;
+            dinheiro -=120;
+
+
+            System.out.println("Conheceu alguem da área tec?"); //evento aleatorio
+            System.out.println("1 - Sim");
+            System.out.println("2 - Não");
+
+
+            int escolha = entrada.nextInt();
+            if (escolha == 1) {
+            System.out.println("Que tudo! Arrasou.");
+            System.out.println("+50 pontos");
+            pontuacao +=50;
+            }
+            else if (escolha == 2){
+                System.out.println("Que pena, quem sabe na próxima"); //não acontece nada
+            }
+           }
+
+
+           //autocuidado 5
+             if (opcao == 5) {
+                   System.out.println("Você tirou um tempo para cuidar de si mesma.");
+                   System.out.println("Saúde mental também é importante.");
+                   System.out.println("+25 felicidade | -150 dinheiro");
+                   entrada.nextLine();
+
+
+                   felicidade += 25;
+                   dinheiro -= 150;
+               }
+           
+            //cuidar do pet 6
+               if (opcao == 6){
+                System.out.println("Seu pet ficou muito feliz com sua atenção.");
+                System.out.println("+10 felicidade | +82 pontos");
+                entrada.nextLine();
+
+
+                felicidade +=10;
+                pontuacao += 82;
+               }//cuidar do pet
+
+
+            //projeto pessoal 7
+               if (opcao == 7){
+                System.out.println("Você trabalhou em um projeto pessoal de programação");
+                System.out.println("+83 pontos | +5 felicidade");
+                entrada.nextLine();
+
+
+                pontuacao += 83;
+                felicidade += 5;
+               
+                System.out.println("Seu projeto viralizou?"); //evento aleatório
+               System.out.println("1 - Sim");
+               System.out.println("2 - Não");
+
+
+                int escolha = entrada.nextInt();
+                if (escolha == 1) {
+                   System.out.println("Parabéns!");
+                   System.out.println("+300 dinheiro | +200 pontos");
+                   dinheiro +=300;
+                   pontuacao +=200;
+                   entrada.nextLine();
+               }
+               else if (escolha == 2 ){
+                   System.out.println("Quem sabe na proxima viraliza"); //não acontece nada
+               }
+               }
+
+
+    //avanço de tempo
+        dia ++;
+        System.out.println("---- Fim do Dia ----");
+        System.out.println("Agora o dia é: " + dia);
+
+
+        System.out.println("STATUS ATUAL:");
+        System.out.println("Pontuação: " + pontuacao);
+        System.out.println("Felicidade: " + felicidade);
+        System.out.println("Dinheiro: " + dinheiro);
+        System.out.println("Dia: " + dia);
+
+
+    System.out.println("Pressione ENTER para continuar");
+    entrada.nextLine();
+    entrada.nextLine();
+       }
+
+
+       //final do jogo - game over
+
+
+       System.out.println("===============================");
+       System.out.println("   RESULTADO FINAL   ");
+       System.out.println("===============================");
+
+
+       //derrotas
+       if (felicidade <=0) {
+        System.out.println("Você trabalhou demais e acabou sofrendo burnout...");
+        System.out.println("Você se dedicou tanto que esqueceu de cuidar de si mesma.");
+        System.out.println("FINAL: DERROTA   |   ESGOTAMENTO TOTAL");
+       }
+       else if (dinheiro <=0) {
+        System.out.println("O dinheiro simplesmente evaporou...");
+        System.out.println("As contas chegaram e não teve como segurar.");
+        System.out.println("FINAL: DERROTA   |   DIFICULDADES FINANCEIRAS");
+       }
+
+
+       //condição pra vencer
+       else if (pontuacao >= 2000) {
+        System.out.println("SIMPLESMENTE ICÔNICA!");
+        System.out.println("Seu desempenho foi absurdo de bom.");
+        System.out.println("Você brilhou, entregou tudo e mais um pouco!");
+        System.out.println("Você foi promovida a Desenvolvedora Sênior!");
+        System.out.println("FINAL: SUCESSO   |   VOCÊ SE TRONOU UMA ÓTIMA PROFISSIONAL");
+        }
+
+
+        else if (pontuacao >= 1500) {
+        System.out.println("VISIONÁRIA!");
+        System.out.println("Seu projeto pessoal viralizou e virou negócio!");
+        System.out.println("Agora você é dona do próprio império tech.");
+        System.out.println("FINAL: SUCESSO   |   STARTUP DE SUCESSO");
+        }
+
+
+        //neutro
+        else {
+        System.out.println("Você chegou ao fim dos 30 dias.");
+        System.out.println("Talvez não tenha sido perfeito...");
+        System.out.println("Mas foi só o começo da sua evolução.");
+        System.out.println("FINAL: JORNADA EM CONSTRUÇÃO ");
+        }
+
+
+// PONTUAÇÃO FINAL
+System.out.println("Pontuação final: " + pontuacao);
+
+
+// MENSAGEM FINAL
+        System.out.println("Obrigado por jogar Magic Dream Code!");
+        System.out.println("Te espero na próxima.");
+   }
+}
