@@ -1,0 +1,155 @@
+algoritmo "MagicDreamCode"
+
+//grupo: MAGIC DREAM CODE: SISTEMA DE TERMINAL INTERATIVO DESENVOLVIDO EM JAVA
+//INTEGRANTES:
+//Camila Camila Aki Yagima Jeronimo
+//Clarissa Gomes Donato
+//Gabriele de Oliveira Andrade
+//Hillary Lopes da Silva
+
+var //variável
+   nomeJogador: caractere 
+   iniciarJogo: inteiro
+   opcaoMenu: inteiro
+   continuarJogo: inteiro
+
+   pontuacao: inteiro
+   felicidade: inteiro
+   dinheiro: inteiro
+   diaAtual: inteiro
+
+inicio //inicio do programa
+
+escreva("=================================")
+escreva("      MAGIC DREAM CODE           ")
+escreva("=================================")
+
+escreva("Olá! Você está prestes a viver a vida mais divônica de todas!") //inicio das mensagens
+escreva("Para iniciarmos, digite seu nome: ")
+leia(nomeJogador) //imprime/le a variavel 
+
+escreva("Qua nome incrível, ", nomeJogador, "!")
+escreva("Neste cenário você é uma desenvolvedora de softwere")
+escreva("Seu objetivo é manter sua felicidade e construir uma jornada de sucesso!")
+
+escreva("Digite 1 para iniciar: ")
+leia(iniciarJogo)
+
+se (iniciarJogo = 1) entao //começa o jogo 
+
+  //variaveis
+   pontuacao <- 150
+   felicidade <- 80
+   dinheiro <- 200
+   diaAtual <- 1
+   continuarJogo <- 1
+
+   enquanto (continuarJogo = 1) e (felicidade > 0) e (dinheiro > 0) e (diaAtual <= 30) faca //loop while
+
+      escreva("=========================")
+      escreva("DIA ", diaAtual, " ")
+      escreva("=========================")
+
+      escreva("Pontuacao: ", pontuacao, " ") //mostra pro usuário no terminal
+      escreva("Felicidade: ", felicidade, " ")
+      escreva("Dinheiro: ", dinheiro, " ")
+
+      escreva("1 - Trabalhar") //mostra no terminal as opções e o usuário escolhe
+      escreva("2 - Estudar")
+      escreva("3 - Relaxar")
+      escreva("4 - Amigos")
+      escreva("5 - Autocuidado")
+      escreva("6 - Cuidar do Pet")
+      escreva("7 - Projeto pessol")
+      escreva("Escolha: ")
+      leia(opcaoMenu)
+
+      se (opcaoMenu = 1) entao //trabalho
+         pontuacao <- pontuacao + 200
+         dinheiro <- dinheiro + 150
+         felicidade <- felicidade - 10
+         escreva("Você passou o dia programando novas funcionalidades.")
+         escreva("Seu código foi elogiado pela equipe!")
+         escreva("200 pontos | +150 dinheiro | -10 felicidade")
+      fimse
+
+      se (opcaoMenu = 2) entao //estudo
+         pontuacao <- pontuacao + 165
+         felicidade <- felicidade - 5
+         escreva("Você decidiu estudar novas tecnologias.")
+         escreva("Muito bem! Conseguiu aprender conceitos importantes da programação")
+         escreva("+165 pontos  |  -5 felicidade")
+      fimse
+
+      se (opcaoMenu = 3) entao //relaxar
+         felicidade <- felicidade + 20
+         dinheiro <- dinheiro - 50
+         escreva("Você relaxou na dreamhouse, ")
+         escreva("ouvindo música e descansando.")
+         escreva("+20 felicidade  |  -50 dinheiro")
+      fimse
+
+      se (opcaoMenu = 4) entao //sair com os amigos
+         felicidade <- felicidade + 15
+         dinheiro <- dinheiro - 120
+         escreva("Você saiu com os seus amigos para conversar e se divertir.")
+         escreva("+15 felicidade  |  -120 dinheiro")
+      fimse
+
+      se (opcaoMenu = 5) entao //autocuidado
+         felicidade <- felicidade + 25
+         dinheiro <- dinheiro - 150
+         escreva("Você tirou um tempo para cuidar de si mesma.")
+         escreva("Saúde mental também é importante.")
+         escreva("+25 felicidade | -150 dinheiro")
+      fimse
+
+      se (opcaoMenu = 6) entao //cuidar do pet
+         felicidade <- felicidade + 10
+         pontuacao <- pontuacao + 82
+         escreva("Seu pet ficou muito feliz com sua atenção.")
+         escreva("+10 felicidade | +82 pontos")
+      fimse
+
+      se (opcaoMenu = 7) entao //projeto pessoal
+         felicidade <- felicidade + 5
+         pontuacao <- pontuacao + 83
+         escreva("Você trabalhou em um projeto pessoal de programação")
+         escreva("+83 pontos | +5 felicidade")
+      fimse
+
+      diaAtual <- diaAtual + 1 //pra continuar rodando o dia, dia 1, dia 2...
+
+
+      escreva("Deseja continuar?") //caso digite não o final é "Jornada em construcao!"
+      escreva("1 - Sim")
+      escreva("2 - Nao")
+      leia(continuarJogo) //caso digite sim o loop continua até o dia <30
+
+   fimenquanto
+
+   escreva("=========================") //imprime no terminal pro resultado final
+   escreva("RESULTADO FINAL")
+   escreva("=========================")
+
+   se (felicidade <= 0) entao //condições de derrota se
+      escreva("Você trabalhou demais e acabou sofrendo burnout...")
+   senao
+      se (dinheiro <= 0) entao
+         escreva("O dinheiro simplesmente evaporou...")
+      senao
+         se (pontuacao >= 2000) entao //condições pra vencer
+            escreva("Seu desempenho foi absurdo de bom.")
+         senao
+            escreva("Jornada em construcao!") //final neutro se não atender os requisitos acima
+         fimse
+      fimse
+   fimse
+
+   escreva("Pontuacao final: ", pontuacao) //mostra a pontuação final
+
+senao
+   escreva("Opcao invalida.") //caso não atenda as condições de derrota e vencer
+
+fimse
+fimalgoritmo //termina o algoritimo
