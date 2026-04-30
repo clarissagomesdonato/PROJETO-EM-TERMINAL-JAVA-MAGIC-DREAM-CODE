@@ -1,8 +1,9 @@
-programa
+algoritmo "MagicDreamCode_Profissional"
+
 {
-    funcao inicio()
+    funcao inicio() //entrada
     {
-        cadeia nomejogador
+        cadeia nomejogador //cadeia armazena sequencia de caracteres
         inteiro iniciar, opcao, resp
         inteiro pontuacao = 150
         inteiro felicidade = 80
