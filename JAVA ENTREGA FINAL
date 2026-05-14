@@ -1,0 +1,392 @@
+//PROJETO INTEGRADOR - Magic Dream Code
+//Camila Aki Yagima Jeronimo
+//Clarissa Gomes Donato
+//Gabriele de Oliveira Andrade
+//Hillary Lopes da Silva
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class MagicDreamCode {
+    public static void main(String[] args) {
+
+
+        Scanner entrada = new Scanner(System.in); //O Scanner lê o que vai estar no terminal
+        Random random = new Random(); // Random é usado para eventos aleatórios
+
+
+        String nomeJogador; //guarda o nome do jogador
+
+        System.out.println("=========================");
+        System.out.println("  MAGIC DREAM CODE  ");
+        System.out.println("=========================");
+
+
+        //inicio do jogo
+        System.out.println("Olá! Você está prestes a viver a vida mais divônica de todas!");
+        System.out.println("Para iniciarmos, digite como gostaria de ser chamado(a): ");
+
+        nomeJogador = entrada.nextLine();
+
+        // Validação do nome; Enquanto tiver número no nome, o jogo pede novamente
+        while (nomeJogador.matches(".*\\d.*") || nomeJogador.length() > 20 || nomeJogador.trim().isEmpty()) {
+
+            // Se tiver número
+            if (nomeJogador.matches(".*\\d.*")) {
+                System.out.println("O nome não pode conter números!");
+            }
+
+            // Se passar de 20 caracteres
+            if (nomeJogador.length() > 20) {
+                System.out.println("O nome pode ter no máximo 20 caracteres!");
+            }
+
+            // Se estiver vazio
+            if (nomeJogador.trim().isEmpty()) {
+                System.out.println("O nome não pode estar vazio!");
+            }
+
+            System.out.println("Digite novamente:");
+            nomeJogador = entrada.nextLine();
+
+            //matches serve para identificar um padrão; regex . qualquer caractere, * repete várias vezes,
+            // .* qualquer coisa várias vezes,
+            // \\d qualquer número de 0 a 9, .*\\d.*qualquer texto que tenhao pelo menos 1 número no meio, ou seja
+            // se o jogador digitar exemplo123 o código vai considerar verdadeiro porque tem número,
+            // fazendo o loop repetir, e só para com um texto de somenet caracteres de texto
+        }
+
+
+        System.out.println("Que nome incrível, " + nomeJogador + "!");
+        System.out.println("Neste cenário você é uma desenvolvedora de software.");
+        System.out.println("Seu objetivo é manter sua felicidade e construir uma jornada de sucesso!");
+
+
+
+        //====================================================================================================
+
+
+
+        //iniciar o jogo
+        int iniciar = 0;
+
+        while (iniciar != 1) {
+            System.out.println("Digite 1 para iniciar a sua jornada.");
+            if (entrada.hasNextInt()) {
+                iniciar = entrada.nextInt();
+
+                if (iniciar != 1) {
+                    System.out.println("Opção inválida!");
+                }
+
+            } else {
+                System.out.println("Digite apenas números!");
+                entrada.nextLine();
+            }
+        }
+
+        entrada.nextLine(); //enter
+        System.out.println("Jornada iniciada! Boa sorte!");
+
+
+        //====================================================================================================
+
+
+
+        //variáveis iniciais
+        int pontuacao = 150;
+        int felicidade = 80;
+        int dinheiro = 200;
+        int dia = 1;
+
+        System.out.println("=========================");
+        System.out.println("  STATUS INICIAL  ");
+        System.out.println("=========================");
+
+        System.out.println("Pontuação: " + pontuacao);
+        System.out.println("Felicidade: " + felicidade);
+        System.out.println("Dinheiro: " + dinheiro);
+        System.out.println("Dia: " + dia);
+
+        System.out.println("mensagem narrativa");
+
+
+        while (felicidade > 0 && dinheiro > 0 && dia <= 30) {
+
+            System.out.println("=========================");
+            System.out.println("  DIA = " + dia);
+            System.out.println("=========================");
+
+            System.out.println("Escolha uma ação:");
+            System.out.println("1 - Trabalhar");
+            System.out.println("2 - Estudar");
+            System.out.println("3 - Relaxar");
+            System.out.println("4 - Sair com os Amigos");
+            System.out.println("5 - Autocuidado");
+            System.out.println("6 - Cuidar do Pet");
+            System.out.println("7 - Desenvolver Projeto Pessoal");
+
+            // Validação do menu, caso não digite números, o jogo retorna novamente a pergunta
+            if (!entrada.hasNextInt()) {
+
+                System.out.println("Digite apenas números!");
+                entrada.nextLine();
+                continue;
+
+                //entrada significa o que vai ser escaneado
+                //hasNextInt() é uma classe usada pra verificar se é um número inteiro
+                //! é não; nesse caso se o usuário não digitou um número inteiro, pede de novo
+            }
+
+            int opcao = entrada.nextInt();
+            entrada.nextLine();
+
+            //1 - Trabalhar
+            if (opcao == 1) {
+
+                System.out.println("Você passou o dia programando novas funcionalidades.");
+                System.out.println("Seu código foi elogiado pela equipe!");
+
+                pontuacao += 120;
+                dinheiro += 80;
+                felicidade -= 15;
+
+                System.out.println("+120 pontos | +80 dinheiro | -15 felicidade");
+
+                int eventoBug = random.nextInt(2);
+
+                if (eventoBug == 1) {
+
+                    System.out.println("BUG EM PRODUÇÃO!");
+                    System.out.println("Você estava cansada hoje.");
+                    System.out.println("Quer revisar o código antes de entregar?");
+                    System.out.println("1 - Sim");
+                    System.out.println("2 - Não");
+
+                    int escolha = 0;
+
+                    while (escolha != 1 && escolha != 2) {
+
+                        if (!entrada.hasNextInt()) {
+
+                            System.out.println("Digite apenas números!");
+                            entrada.nextLine();
+                            continue;
+                        }
+
+                        escolha = entrada.nextInt();
+                        entrada.nextLine();
+
+                        if (escolha != 1 && escolha != 2) {
+                            System.out.println("Escolha apenas 1 ou 2!");
+                        }
+                    }
+
+                    if (escolha == 1) {
+                        System.out.println("Você revisou o código com atenção.");
+                        System.out.println("Nenhum bug passou!");
+
+                    } else {
+
+                        System.out.println("Você não revisou o código...");
+                        System.out.println("O bug foi parar em produção!");
+
+                        felicidade -= 10;
+                        pontuacao -= 50;
+                    }
+                }
+            }
+
+            //2 - estudar
+            else if (opcao == 2) {
+
+                System.out.println("Você decidiu estudar novas tecnologias.");
+                System.out.println("Conseguiu aprender conceitos importantes!");
+
+                pontuacao += 180;
+                felicidade -= 5;
+
+                System.out.println("+180 pontos | -5 felicidade");
+            }
+
+            //3 - Relaxar
+            else if (opcao == 3) {
+
+                System.out.println("Você decidiu relaxar hoje.");
+                System.out.println("Descansar também faz parte da jornada.");
+
+                felicidade += 35;
+                dinheiro -= 20;
+
+                System.out.println("+35 felicidade | -20 dinheiro");
+            }
+
+            //4 - Sair com os Amigos
+            else if (opcao == 4) {
+
+                System.out.println("Você saiu com os amigos.");
+
+                felicidade += 20;
+                dinheiro -= 70;
+                pontuacao += 50;
+
+                System.out.println("+20 felicidade | -70 dinheiro");
+            }
+
+            //5 - Autocuidado
+            else if (opcao == 5) {
+
+                System.out.println("Você tirou um tempo para cuidar de si mesma.");
+
+                felicidade += 30;
+                dinheiro -= 60;
+
+                System.out.println("+30 felicidade | -60 dinheiro");
+            }
+
+            //6 - Cuidar do Pet
+            else if (opcao == 6) {
+
+                System.out.println("Seu pet ficou muito feliz!");
+
+                felicidade += 10;
+                pontuacao += 50;
+
+                System.out.println("+10 felicidade | +50 pontos");
+            }
+
+            //7 - Desenvolver Projeto Pessoal
+            else if (opcao == 7) {
+
+                System.out.println("Você trabalhou em um projeto pessoal.");
+
+                pontuacao += 90;
+                felicidade += 5;
+
+                System.out.println("+90 pontos | +5 felicidade");
+
+                int viralizou = random.nextInt(2);
+
+                if (viralizou == 1) {
+
+                    System.out.println("SEU PROJETO VIRALIZOU!");
+                    System.out.println("+200 dinheiro | +150 pontos");
+
+                    dinheiro += 200;
+                    pontuacao += 150;
+                }
+            } else {
+
+                System.out.println("Opção inválida!");
+                continue;
+            }
+
+
+            //====================================================================================================
+
+            System.out.println("Deseja avançar para o próximo dia?"); //avanço de tempo, dia 1, dia 2...
+            System.out.println("1 - Sim");
+            System.out.println("2 - Não");
+
+            if (!entrada.hasNextInt()) {
+
+                System.out.println("Digite apenas números!");
+                entrada.nextLine();
+                continue;
+            }
+
+            int avancar = entrada.nextInt();
+            entrada.nextLine();
+
+            if (avancar == 2) {
+
+                System.out.println("Você encerrou sua jornada mais cedo.");
+                break;
+            }
+
+            dia++;
+            if (dia > 30) {
+                break;
+            }
+
+            // Mostrar status atualizado
+            System.out.println("=========================");
+            System.out.println("  STATUS ATUAL  ");
+            System.out.println("=========================");
+
+            mostrarStatus(pontuacao, felicidade, dinheiro, dia);
+
+            System.out.println("Pressione ENTER para continuar");
+
+            String continuar = entrada.nextLine();
+
+            while (!continuar.trim().isEmpty()) {
+
+                System.out.println("Apenas pressione ENTER para continuar.");
+
+                continuar = entrada.nextLine();
+            }
+        }
+
+
+        //====================================================================================================
+        //FINAIS
+
+
+        System.out.println("=========================");
+        System.out.println("  RESULTADO FINAL  ");
+        System.out.println("=========================");
+
+        // Derrota por felicidade
+        if (felicidade <= 0) {
+            System.out.println("Você trabalhou demais e sofreu burnout...");
+            System.out.println("FINAL: DERROTA | ESGOTAMENTO TOTAL");
+        }
+
+        // Derrota por dinheiro
+        else if (dinheiro <= 0) {
+            System.out.println("O dinheiro acabou...");
+            System.out.println("FINAL: DERROTA | DIFICULDADES FINANCEIRAS");
+        }
+
+        // Final lendário
+        else if (pontuacao >= 3000 && felicidade >= 80 && dinheiro >= 1500) {
+            System.out.println("EMPRESÁRIA!");
+            System.out.println("Você criou o maior império tech do mundo.");
+        }
+
+        // Final sucesso
+        else if (pontuacao >= 2000) {
+            System.out.println("SIMPLESMENTE ICÔNICA!");
+            System.out.println("Você foi promovida a Desenvolvedora Sênior.");
+        }
+
+        // Final startup
+        else if (pontuacao >= 1500) {
+            System.out.println("VISIONÁRIA!");
+            System.out.println("Seu projeto virou uma startup.");
+        }
+
+        // Final neutro
+        else {
+            System.out.println("Você chegou ao fim da jornada.");
+            System.out.println("Foi apenas o começo da sua evolução.");
+        }
+
+        // Pontuação final
+        System.out.println("Pontuação final: " + pontuacao);
+        System.out.println("Obrigado por jogar Magic Dream Code!");
+
+
+        entrada.close(); // Fecha o Scanner
+    }
+
+    public static void mostrarStatus(int pontuacao, int felicidade, int dinheiro, int dia) {
+
+        System.out.println("Pontuação: " + pontuacao);
+        System.out.println("Felicidade: " + felicidade);
+        System.out.println("Dinheiro: " + dinheiro);
+        System.out.println("Dia: " + dia);
+    }
+}
+
